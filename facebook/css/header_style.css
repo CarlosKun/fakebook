@@ -1,0 +1,911 @@
+html, body{
+    font-family: 'Open Sans', sans-serif;
+}
+.loading{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    background-image: url("http://www.villagroupresorts.com/images/preloader-offers.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.loader{
+    display: none;
+    position: absolute;
+    z-index: 999;
+    right: 8%;
+    background: transparent;
+    width: 55px;
+    top: 24%;
+}
+.link-home{
+    position: absolute;
+    top: 0%;
+    left: 44%;
+}
+.img-home{
+    width: 150px;
+    height: 50px;
+}
+.carousel-inner{
+    margin-top: 50px;
+}
+.menu-close{
+    display: none;
+}
+.close-second-menu{
+    display: none;
+}
+.phone-icon{
+    display: none;
+}
+
+.brand-menu{
+    text-align: right;
+    padding: 10px 0;
+    height: 40px;
+    background-image: url('http://sandbox.villagroupresorts.com/assets/images/villa-group-resorts-logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #572700;;
+    background-size: 9%;
+    width: 100%;
+}
+
+.destination-menu{
+    background-image: url('');
+    background-position: center;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+.opacity-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,1);
+    border-bottom: solid 1px white;
+    z-index: 10;
+    opacity: 1;
+    transition: all 255ms ease-in;
+}
+
+.opacity-menu2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(120,78,49,.5);
+    border-bottom: solid 1px white;
+    z-index: 5;
+}
+.opacity-menu2 a:hover{
+    color: white !important;
+}
+
+.brand-menu img{
+    width: 18px;
+    cursor: pointer;
+    margin: 0 0 0 40px;
+}
+
+.brand-menu ul{
+    display: inline-block;
+    color: white;
+    margin: 0;
+    height: 40px;
+    padding: 0 15px 0 0;
+}
+
+.brand-menu ul li{
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 45px;
+}
+
+.menu-navigator{
+    padding: 0;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    background-color: rgb(120,78,49);
+    width: 100%;
+}
+
+.menu-navigator li{
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.menu-navigator > li:hover{
+    background-color: #f3a814;
+}
+
+.menu-navigator li a{
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.menu-navigator li ul{
+    position:absolute;
+    left:0;
+    top:-10px;
+    z-index: -1;
+    visibility:hidden;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+    width: 100%;
+    background-color: rgba(255,255,255,1);
+    overflow-x: auto;
+    padding-left: 0px !important;
+}
+
+.menu-navigator li:hover > ul{
+    top: 100px;
+    visibility:visible;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+
+.menu-navigator li ul li{
+    position: relative;
+    color: #333;
+    font-size: 12px;
+    margin: 0;
+    padding: 10px 0;
+    /*height: 80px;*/
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.menu-navigator li ul li:hover > .opacity-menu {
+    opacity: 0;
+    z-index: 0;
+}
+
+.images-destinos li{
+    width: 24%;
+    height: 130px !important;
+    display: inline-block;
+    opacity: 1;
+}
+#vdplc{
+    background-image: url('../images/villa-del-palmar-cabo-san-lucas-resort-mexico.jpg');
+}
+#vda{
+    background-image: url('../images/villa-del-arco-cabo-san-lucas-resort-mexico.jpg');
+}
+#vlec{
+    background-image: url('../images/villa-la-estancia-los-cabos-resort-mexico.jpg');
+}
+#vdm{
+    background-image: url('../images/villa-del-mar-puerto-vallarta-resort-mexico.jpg');
+}
+#vdppv{
+    background-image: url('../images/villa-del-palmar-puerto-vallarta-resort-mexico.jpg');
+}
+#vdpf{
+    background-image: url('../images/villa-del-palmar-flamingos-riviera-nayarit-resort-mexico.jpg');
+}
+#vlern{
+    background-image: url('../images/villa-la-estancia-riviera-nayarit.jpg');
+}
+#vdpc{
+    background-image: url('../images/villa-del-palmar-cancun.jpg');
+}
+#vdpl{
+    background-image: url('../images/villa-del-palmar-islands-of-loreto-resort-mexico.jpg');
+}
+.resort-menu{
+    float: left !important;
+}
+.resort-destination{
+    display: block;
+}
+.resort-destination li{
+    text-align: center;
+}
+.menu-navigator li img{
+    width: 70px;
+    display: block;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+.img-span{
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+.menu-navigator li span img{
+    width: 10px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.menu-navigator li ul li a{
+    padding: 20px;
+    color: #c19F82;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.menu-navigator li ul li a:hover{
+    /*background-color: rgba(251,176,59,0.7);*/
+    color: #f3a814;
+}
+
+.list-social{
+    display: block !important;
+    position: absolute;
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100px);
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.brand-menu ul li:hover > ul{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.list-social li{
+    display: block !important;
+    width: 50px;
+    margin: 15px 0 0 0px;
+    padding: 10px !important;
+}
+
+.list-social li:last-child{
+    border: 0px !important;
+}
+
+.list-social li a{
+    padding: 0 !important;
+    margin: 0;
+    border: 0 !important;
+}
+
+.list-social li a img{
+    margin: 0;
+    width: 50px;
+}
+
+.phone-menu{
+    width: 47%;
+    text-align: left;
+}
+
+.phone-menu li:last-child{
+    /*border-left: solid 1px white;*/
+}
+
+.lang-menu{
+    width: 50%;
+}
+
+.lang-menu li:nth-child(2){
+    border-left: solid 1px white;
+}
+
+.lang-menu span{
+    color: white;
+    padding: 0 10px 0 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.lang-menu li a{
+    font-size: 20px;
+    color: white;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.login-fb .fb-img{
+    width: 40px;
+    border-radius: 100%;
+    margin: 0 10px 0 0;
+}
+.login-fb > div{
+    display: inline-block;
+}
+.up-arrow{
+    display: block;
+    margin: -3px 0 -5px 20px !important;
+    position: absolute;
+    top: -10px;
+}
+.login-fb span{
+    padding: 0;
+}
+.login-fb .fb-arrow{
+    width: 10px;
+    display: inline-block;
+    margin-left: 30px;
+}
+.login-fb ul{
+    display: block !important;
+    position: relative;
+    opacity: 0;
+    top: -185px;
+    width: 175px;
+    margin-top: 10px;
+    padding: 0;
+    height: auto;
+    background-color: white;
+    text-align: left;
+    z-index: 9999999999;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all .5s;
+}
+
+.login-fb li{
+    color: gray;
+    font-size: 13px;
+    width: 100%;
+}
+.fb-item:hover{
+    background-color: #999999;
+    color: white;
+}
+.login-fb img{
+    margin: 12px 0;
+}
+.right-arrow{
+     float: right;
+     margin: 12px 5px 0 0 !important;
+ }
+
+.fb-logout{
+    border-top: solid 1px lightgrey;
+    text-align: right;
+    width: 100%;
+}
+
+.login-fb:hover > ul{
+    top: 0;
+}
+
+.number{
+    color: #f3a814 !important;
+}
+
+.nav-menu-mobile{
+    display: none !important;
+}
+
+.carousel-indicators{
+    z-index: 1 !important;
+}
+#breadcrumb li a:after{
+    z-index: 1;
+}
+/* FACEBOOK LOOK*/
+.fb-wrapper{
+    margin-top: 150px;
+}
+.media{
+    padding-bottom: 5px;
+}
+.fb-destination li{
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    font-size: 11px;
+    padding: 5px 0;
+    color: #4b4f56;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.fb-destination h4 {
+    border-bottom: solid 1px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.post-wrapper{
+    margin: 0 0 10px 0;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.mobil-profile{
+    display: none;
+}
+.fb-menu-mobile{
+    display: none;
+}
+
+/* //////////////////////////////////////////////////// MODAL /////////////////////////////////////////////////////// */
+.modal-backdrop.in{
+    opacity: .9;
+}
+.modal-dialog{
+    top: 20%;
+}
+.modal-wrapper{
+    background-color: white;
+}
+.image-modal{
+    padding: 0;
+}
+.fb-modal-content{
+    padding: 20px 25px;
+}
+.fb-modal-content img{
+    width: 40px;
+}
+.fb-modal-content h3{
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 17px;
+}
+.fb-modal-content div{
+    text-align: center;
+    margin-top: 70px;
+}
+.fb-modal-content div h3{
+    font-size: 20px;
+    text-shadow: 2px 1px lightgrey;
+    border-bottom: solid 1px;
+    display: inline-block;
+    padding: 0;
+}
+
+.terms-content h3{
+    font-size: 20px;
+    text-shadow: 2px 1px lightgrey;
+    border-bottom: solid 1px;
+    display: inline-block;
+    padding: 0;
+}
+.terms-content > div{
+    font-size: 12px;
+}
+/* //////////////////////////////////////////////////// Booking /////////////////////////////////////////////////////// */
+.booking{
+    height: 40px;
+    background-color: white;
+}
+.item-form{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background-color: white !important;
+    margin: 10px 0;
+}
+.btn-book{
+    transition: all .3s;
+}
+.btn-book:hover{
+    background-color: #ce9f4f;
+    color: white;
+}
+@media screen and (max-width: 1024px){
+    .menu-navigator li:hover > ul{
+        top: 100px;
+    }
+    .menu-navigator li a{
+        padding: 4px;
+        font-size: 12px;
+    }
+    .chat_lp{
+        margin-top: -3px;
+    }
+    .brand-menu ul li{
+        padding: 0;
+    }
+    .lang-menu span{
+        padding: 0 10px 0 15px;
+    }
+    .login-fb span{
+        padding-right: 5px;
+    }
+    .login-fb .fb-arrow{
+        margin-left: 5px;
+    }
+    .login-fb ul{
+        padding: 5px;
+    }
+    .login-fb a{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 993px){
+    .phone-menu li:last-child > img{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .opacity-menu{
+        display: none;
+    }
+    .opacity-menu2 a{
+        color: white !important;
+    }
+    .img-span{
+        display: none;
+    }
+    .nav-menu-mobile{
+        display: inline-block !important;
+    }
+    .brand-menu{
+        height: auto;
+        background-size: 20%;
+    }
+    .brand-menu ul{
+        padding: 0 10px 0 0;
+    }
+    .brand-menu ul li{
+        padding: 10px 0 0 0;
+        line-height: inherit;
+    }
+    .brand-menu img{
+        margin: 0 10px;
+        vertical-align: text-bottom;
+    }
+    .phone-menu{
+        width: 46%
+    }
+    .phone-menu li a{
+        height: 40px;
+        padding: 10px !important;
+    }
+    .phone-menu span{
+        padding: 0;
+        height: 40px;
+    }
+    .number{
+        display: none !important;
+    }
+    .phone-icon{
+        display: block;
+    }
+    /* side menu */
+    .menu-navigator{
+        display: none;
+        height: 100vh;
+        text-align: left;
+        /*padding: 0 20px;*/
+        overflow: visible !important;
+        width: 30%;
+    }
+    .menu-navigator li{
+        display: block;
+        padding: 15px 0;
+    }
+    .menu-navigator li img{
+        display: inherit;
+    }
+    .menu-navigator li ul{
+        top: 55px;
+        left: 29%;
+        display: block;
+    }
+    .menu-navigator li ul li{
+        padding: 20px;
+    }
+    .menu-navigator li:hover > ul{
+        z-index: 1;
+        display: block;
+        left: 29%;
+        top: 60px;
+        height: 100vh;
+        padding: 0px;
+        text-align: center;
+        width: 71%;
+    }
+    .list-social li{
+        display: inline-block;
+        margin: 20px 0 0 0;
+    }
+    .cd-auto-hide-header.is-hidden{
+        -webkit-transform: translateY(0%) !important;
+        -ms-transform: translateY(-100%) !important;
+        transform: translateY(0%) !important;
+    }
+    .link-home{
+        left: 39%;
+    }
+    .img-home{
+        width: 170px;
+        height: 50px;
+    }
+    .images-destinos li{
+        width: 100%;
+    }
+    .li-hidden{
+        display: none !important;
+    }
+
+    /*--------------------------- FACEBOOK --------------------------------*/
+    .fb-wrapper{
+        margin-top: 80px;
+    }
+    .login-fb{
+        padding: 0 !important;
+    }
+    .login-fb > div{
+        display: none;
+    }
+    .login-fb .fb-arrow{
+        margin-left: 0;
+        vertical-align: super;
+    }
+    .login-fb li{
+        display: inline-block !important;
+        padding: 10px 5px !important;
+    }
+    .up-arrow{
+        right: 65px;
+    }
+    /*--------------------------- MODAL --------------------------------*/
+    .image-modal{
+        width: 50%;
+        display: inline-block;
+    }
+    .fb-modal-content{
+        width: 50%;
+        display: inline-block;
+    }
+    .fb-modal-content div{
+        margin-top: auto;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .phone-menu{
+        width: 45%;
+        display: none !important;
+    }
+    .login-fb span{
+        padding: 0;
+    }
+    .up-arrow{
+        right: 45px;
+    }
+    .modal-dialog{
+        padding: 0 20px;
+    }
+    .fb-modal-content{
+        width: 48%;
+        vertical-align: top;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .menu-navigator li img{
+        display: none;
+    }
+    .brand-menu{
+        padding: 5px 0;
+        background-position: 10%;
+        background-size: 30%;
+    }
+    .brand-menu ul li{
+        padding: 0 0 0 10px;
+        height: auto;
+        vertical-align: -webkit-baseline-middle;
+    }
+    .lang-menu{
+        width: 100%;
+    }
+    .phone-icon{
+        display: inline-block;
+    }
+    .brand-menu ul{
+        padding: 5px 10px 0 0;
+    }
+    .brand-menu img{
+        margin: 0px 20px 3px 20px;
+    }
+    .brand-menu ul li:last-child{
+        border-left: solid 1px white;
+    }
+    .lang-menu li:nth-child(2){
+        border: 0px;
+    }
+    .number{
+        display: none !important;
+    }
+    .menu-navigator{
+        width: 100%;
+        text-align: center;
+        height: auto;
+    }
+    .menu-navigator li ul{
+        background-color: rgba(255,255,255,1);
+    }
+    .menu-navigator li{
+        padding: 15px 0;
+    }
+    .menu-navigator li a{
+        padding: 15px 0;
+    }
+    .menu-navigator li ul li{
+        padding: 0;
+    }
+    .menu-navigator li ul li a:hover{
+        background-color: none;
+        color: #f3a814 !important;
+    }
+    .menu-navigator li:hover > ul{
+        width: 100%;
+        left: 0;
+        height: auto;
+        top: 50px;
+    }
+    .close-second-menu{
+        position: absolute;
+        top: 52px;
+        right: 1px;
+        padding: 1px 0 3px 0;
+        background-color: rgba(0,0,0,.5);
+        text-align: center;
+        z-index: 99;
+    }
+    .close-second-menu img{
+        width: 40%;
+    }
+    .menu-navigator li ul li a{
+        font-size: small;
+        /*padding: 20px 0;*/
+    }
+    .nav-menu-mobile{
+        padding: 0 !important;
+    }
+    .link-home{
+        left: 0;
+    }
+    .images-destinos li{
+        width: 100%;
+    }
+    .li-hidden{
+        display: inherit !important;
+    }
+    .images-destinos li{
+        height: 55px !important;
+    }
+    .opacity-menu2{
+        background-color: white;
+    }
+    .opacity-menu2 a{
+        color: #c19F82 !important;
+    }
+    #vdpc{
+        background-image: url('');
+    }
+    #vda{
+        background-image: url('');
+    }
+    #vlec{
+        background-image: url('');
+    }
+    #vdm{
+        background-image: url('');
+    }
+    #vdppv{
+        background-image: url('');
+    }
+    #vdpf{
+        background-image: url('');
+    }
+    #vlern{
+        background-image: url('');
+    }
+    #vdpc{
+        background-image: url('');
+    }
+    #vdpl{
+        background-image: url('');
+    }
+    /* ------------------------------------------ MOBILE PROFILE ---------------------------------------------------- */
+    .panel-default{
+        position: fixed;
+        margin: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+    .login-fb{
+        display: none !important;
+    }
+    .fb-wrapper{
+        margin-top: 100px;
+    }
+    .mobil-profile{
+        display: inline-block;
+        padding: 5px 20px;
+        background-color: rgb(120,78,49);
+        width: 100%;
+        color: white;
+    }
+    .mobil-profile > img{
+        width: 30px;
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .mobil-profile div{
+        display: inline-block;
+        float: right;;
+    }
+    .mobil-profile div img{
+        width: 10px;
+        display: inline-block;
+    }
+    .mobil-profile div span{
+        background-color: white;
+        display: inline-block;
+        color: #c19F82;
+        margin-right: 5px;
+        border-radius: 15%;
+        padding: 5px 10px;
+    }
+    .fb-menu-mobile{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: -1;
+        display: none;
+    }
+    .fb-menu-mobile div{
+        padding: 10px 0;
+    }
+    .fb-menu-mobile a{
+        text-decoration: none;
+        color: gray;
+    }
+    .fb-menu-mobile li{
+        width: 100%;
+        list-style: none;
+        padding: 10px 10px;
+    }
+    .fb-menu-mobile div a:last-child li{
+        border-top: solid 1px #DBDBDB;
+        text-align: right
+    }
+    /* ---------------------------------------------- MODAL---------------------------------------------------------- */
+    .image-modal{
+        width: auto;
+        display: inline-block;
+    }
+    .fb-modal-content{
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+    }
+    .modal-dialog{
+        padding: 0 20px;
+    }
+    .
+}
