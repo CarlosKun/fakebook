@@ -23,14 +23,28 @@
     });
     $($close).on('click', function () {
         $(this).css('display', 'none').removeClass('exit');
-    })
+    });
 
+    // MODAL PROMOS
     $('#promoModal').on('show.bs.modal', function (event) {
         var promo = $(event.relatedTarget); // Button that triggered the modal
-        var img  = promo.find('media-left img').attr('src');
-        console.log(img);
+        var thumb = promo.find('.img-profile').attr('src'); //img profile
+        var img  = promo.find('.image-post-full').attr('src'); //img banner
+        var promocode = promo.find('.hidden-info span').text(); //promocode
+
         var modal = $(this);
         modal.find('.image-modal img').attr('src', img);
+        modal.find('.fb-modal-content img').attr('src', thumb);
+        modal.find('#promocode').val(promocode)
+    })
+
+    //MODAL TERMS
+    $('#termsModal').on('show.bs.modal', function (event) {
+        var terms = $(event.relatedTarget); // Button that triggered the modal
+        var conditions = terms.find('.hidden-info > div');
+
+        var promoTerms = $(this);
+        promoTerms.find('.terms-content > div').append(conditions);
     })
 
 })();

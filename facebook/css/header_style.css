@@ -336,6 +336,14 @@ html, body{
 .login-fb > div{
     display: inline-block;
 }
+.login-fb div span{
+    background-color: white;
+    color: #c19F82;
+    padding: 4px 8px;
+    border-radius: 5px;
+    display: inline;
+}
+
 .up-arrow{
     display: block;
     margin: -3px 0 -5px 20px !important;
@@ -456,7 +464,7 @@ html, body{
     padding: 0;
 }
 .fb-modal-content{
-    padding: 20px 25px;
+    padding: 10px;
 }
 .fb-modal-content img{
     width: 40px;
@@ -477,7 +485,9 @@ html, body{
     display: inline-block;
     padding: 0;
 }
-
+.hidden-info{
+    display: none;
+}
 .terms-content h3{
     font-size: 20px;
     text-shadow: 2px 1px lightgrey;
@@ -487,6 +497,25 @@ html, body{
 }
 .terms-content > div{
     font-size: 12px;
+    padding: 10px 0;
+}
+.img-flow{
+    overflow: hidden;
+}
+.img-profile{
+    display: none;
+}
+.close{
+    padding-right: 5px;
+}
+.favorite{
+    width: 100%;
+    text-align: right;
+    padding: 5px 5px 0 0;
+}
+.favorite img{
+    width: 20px;
+    cursor: pointer;
 }
 /* //////////////////////////////////////////////////// Booking /////////////////////////////////////////////////////// */
 .booking{
@@ -528,7 +557,7 @@ html, body{
         padding-right: 5px;
     }
     .login-fb .fb-arrow{
-        margin-left: 5px;
+        margin-left: 0;
     }
     .login-fb ul{
         padding: 5px;
@@ -654,7 +683,17 @@ html, body{
         padding: 0 !important;
     }
     .login-fb > div{
-        display: none;
+        vertical-align: super;
+    }
+    .login-fb div span{
+        display: inline-block;
+        vertical-align: text-bottom;
+    }
+    .login-fb span{
+        vertical-align: super;
+    }
+    .user-name{
+        display: none !important;
     }
     .login-fb .fb-arrow{
         margin-left: 0;
@@ -698,6 +737,14 @@ html, body{
     .fb-modal-content{
         width: 48%;
         vertical-align: top;
+    }
+    .panel-default{
+        position: fixed;
+        margin: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
     }
 }
 
@@ -828,14 +875,6 @@ html, body{
         background-image: url('');
     }
     /* ------------------------------------------ MOBILE PROFILE ---------------------------------------------------- */
-    .panel-default{
-        position: fixed;
-        margin: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 999;
-    }
     .login-fb{
         display: none !important;
     }
@@ -885,6 +924,9 @@ html, body{
         text-decoration: none;
         color: gray;
     }
+    .fb-modal-content div h3{
+        font-size: 18px;
+    }
     .fb-menu-mobile li{
         width: 100%;
         list-style: none;
@@ -907,5 +949,15 @@ html, body{
     .modal-dialog{
         padding: 0 20px;
     }
-    .
+    .daterangepicker .calendar-table{
+        font-size: 9px !important;
+    }
+    .close{
+        position: absolute;
+        z-index: 99;
+        width: 100%;
+        float: none;
+        text-align: right;
+        padding-right: 15px;
+    }
 }

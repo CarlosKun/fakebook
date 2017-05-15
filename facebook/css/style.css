@@ -131,6 +131,11 @@ body{
     display: block;
     padding: 0;
     margin: 0;
+    transition: all .5s;
+}
+.image-post-full:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
 }
 .nav-grand-profile{
 	border-top: 1px solid #ddd;
