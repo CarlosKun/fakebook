@@ -58,7 +58,6 @@ $(function() {
                 $('input.sendtorb').prop('disabled', false);
             });
 
-
             $('input[name="daterange"]').on('cancel.daterangepicker', function() {
                 $(this).val('');
                 $('input.sendtorb').prop('disabled', true);

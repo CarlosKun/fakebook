@@ -341,12 +341,12 @@ html, body{
     color: #c19F82;
     padding: 4px 8px;
     border-radius: 5px;
-    display: inline;
+    display: none;
 }
 
 .up-arrow{
     display: block;
-    margin: -3px 0 -5px 20px !important;
+    margin: -3px 0 -5px 12px !important;
     position: absolute;
     top: -10px;
 }
@@ -356,14 +356,13 @@ html, body{
 .login-fb .fb-arrow{
     width: 10px;
     display: inline-block;
-    margin-left: 30px;
 }
 .login-fb ul{
     display: block !important;
     position: relative;
     opacity: 0;
     top: -185px;
-    width: 175px;
+    width: 250px;
     margin-top: 10px;
     padding: 0;
     height: auto;
@@ -427,15 +426,27 @@ html, body{
     text-decoration: none;
     display: block;
     font-size: 11px;
-    padding: 5px 0;
+    padding: 5px;
     color: #4b4f56;
     margin: 5px 0;
     cursor: pointer;
 }
+.fb-destination li:hover{
+    background-color: #e9eaed;
+}
+.fb-destination li img{
+    width: 35px;
+}
+.fb-destination li a{
+    color: #1d2129;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 0 5px;
+}
 .fb-destination h4 {
     border-bottom: solid 1px;
-    margin-top: 20px;
     display: inline-block;
+    margin-left: 10px;
 }
 .post-wrapper{
     margin: 0 0 10px 0;
@@ -448,6 +459,12 @@ html, body{
 }
 .fb-menu-mobile{
     display: none;
+}
+.fb-title{
+    font-weight: bold;
+}
+.panel-body{
+    padding: 5px;
 }
 
 /* //////////////////////////////////////////////////// MODAL /////////////////////////////////////////////////////// */
@@ -509,8 +526,9 @@ html, body{
     padding-right: 5px;
 }
 .favorite{
-    width: 100%;
-    text-align: right;
+    display: inline-block;
+    width: 7%;
+    text-align: center;
     padding: 5px 5px 0 0;
 }
 .favorite img{
@@ -704,9 +722,12 @@ html, body{
         padding: 10px 5px !important;
     }
     .up-arrow{
-        right: 65px;
+        right: 92px;
     }
     /*--------------------------- MODAL --------------------------------*/
+    .modal-dialog{
+        top: 30%;
+    }
     .image-modal{
         width: 50%;
         display: inline-block;
@@ -729,9 +750,10 @@ html, body{
         padding: 0;
     }
     .up-arrow{
-        right: 45px;
+        right: 72px;
     }
     .modal-dialog{
+        top: 20%;
         padding: 0 20px;
     }
     .fb-modal-content{

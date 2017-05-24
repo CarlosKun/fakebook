@@ -45,6 +45,6 @@
 
         var promoTerms = $(this);
         promoTerms.find('.terms-content > div').append(conditions);
-    })
+    });
 
 })();

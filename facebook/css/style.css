@@ -101,12 +101,16 @@ body{
 	border-top: 1px solid #ddd;
     padding: 9px;
     background: rgb(246, 247, 248);
-    text-align: right;
 }
 .link-post, .link-post:hover {
 	font-weight: bold;
 	padding: 0 5px;
 	color: rgb(127, 127, 127);
+}
+.btn-terms{
+    width: 90%;
+    display: inline-block;
+    text-align: right;
 }
 .time-post:after{
 	font-family:'FontAwesome';

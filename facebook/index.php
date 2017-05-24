@@ -1,3 +1,16 @@
+<?php include 'functions/Db.php' ;
+$date =  date("Y-m-d H:i");
+$counter = 1;
+$resorts_name = array(
+    'VDPCSL'  => 'Villa del Palmar Cabo San Lucas',
+    'VDACSL'  => 'Villa del Arco Cabo San Lucas',
+    'VLECSL'  => 'Villa la Estancia Cabo San Lucas',
+    'VDMPV'  => 'Villa del Mar Puerto Vallarta',
+    'VDPPV'  => 'Villa del Palmar Puerto Vallarta',
+    'VDPFLM'  => 'Villa del Palmar Flamingos',
+    'VLERN'  => 'Villa la Estancia Riviera Nayarit',
+);
+$db = Db::getInstance(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,23 +45,21 @@
             </li>
         </ul>
         <ul class="lang-menu">
-            <?php  /* /////////////////////////////////// FACEBOOK END//////////////////////////////////////////// */ ?>
+            <?php   /////////////////////////////////// FACEBOOK END////////////////////////////////////////////  ?>
             <li class="login-fb">
                 <img src="images/Donkey_Kong_Profile_Artwork.jpg" alt="" class="fb-img">
                 <div class="user-name">Hi Donkey!</div>
                 <div>
-                    <span>2</span>
+                    <span id="counter">2</span>
                 </div>
                 <span><img src="images/arrow-down-sign-to-navigate.png" class="fb-arrow" alt=""></span>
                 <ul>
                     <img class="up-arrow" src="images/drop-up-arrow.png" alt="">
-                    <a href="#!"><li>Your saved offers</li></a>
-                    <a href="#!"><li class="fb-item">Villa saver</li></a>
-                    <a href="#!"><li class="fb-item">Springtacular</li></a>
+                    <a id="saved-offers" href="#!"><li>Your saved offers</li></a>
                     <a href="#!"><li class="fb-logout fb-item">Log out</li></a>
                 </ul>
             </li>
-            <?php  /* /////////////////////////////////// FACEBOOK END//////////////////////////////////////////// */ ?>
+            <?php  //////////////////////////////////// FACEBOOK END////////////////////////////////////////////  ?>
             <li><a href="tel:018006818150" class="number"><span>USA </span>1 800 831 1191</a></li>
             <li><a href="#!" class="number">ES</a></li>
             <li><a href="tel:018006818150" class="phone-icon"><img src="images/telephone.png" alt=""></a></li>
@@ -169,10 +180,10 @@
     </ul>
     <?php ///////////////////////////////////////////// FACEBOOK MOBILE////////////////////////////////////////////// ?>
     <div class="mobil-profile">
-        <img src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
+        <img src="/images/fb/Donkey_Kong_Profile_Artwork.jpg" alt="">
         <span>Hi Donkey!</span>
         <div>
-            <span>2</span>
+            <span id="counter">2</span>
             <img src="images/arrow-down-sign-to-navigate.png" alt="">
         </div>
     </div>
@@ -188,10 +199,6 @@
     <?php ///////////////////////////////////////////// FACEBOOK MOBILE END ///////////////////////////////////////// ?>
 </nav>
 
-<?php $today = date('m/d/Y');
-$date2 = strtotime('+1 day', strtotime($today));
-$tomorrow = date ( 'm/d/Y' , $date2 ); ?>
-
 <div class="fb-wrapper">
     <div class="container">
         <aside class="col-sm-3">
@@ -201,399 +208,81 @@ $tomorrow = date ( 'm/d/Y' , $date2 ); ?>
                     <div class="fb-destination simplefilter">
                         <!--<li data-filter="10" class="filter active"><a href="#inicio">Home</a></li> -->
                         <h4>Los Cabos</h4>
-                        <li data-filter="1" class="filter active"><a href="#inicio">VILLA DEL PALMAR CABO SAN LUCAS</a></li>
-                        <li data-filter="2" class="filter"><a href="#inicio">VILLA DEL ARCO CABO SAN LUCAS</a></li>
-                        <li data-filter="3" class="filter"><a href="#inicio">VILLA LA ESTANCIA LOS CABOS</a></li>
+                        <li data-filter="1" class="filter active"><img src="images/fb_vdplc.png" alt=""><a href="#!">VILLA DEL PALMAR CABO SAN LUCAS</a></li>
+                        <li data-filter="2" class="filter"><img src="images/fb_vdalc.png" alt=""><a href="#!">VILLA DEL ARCO CABO SAN LUCAS</a></li>
+                        <li data-filter="3" class="filter"><img src="images/fb_vlelc.jpg" alt=""><a href="#!">VILLA LA ESTANCIA LOS CABOS</a></li>
                     </div>
                     <div class="fb-destination">
                         <h4>Vallarta - Nayarit</h4>
-                        <li data-filter="4" class="filter"><a href="#inicio">VILLA DEL MAR PUERTO VALLARTA</a></li>
-                        <li data-filter="5" class="filter"><a href="#inicio">VILLA DEL PALMAR PUERTO VALLARTA</a></li>
-                        <li data-filter="6" class="filter"><a href="#inicio">VILLA DEL PALMAR FLAMINGOS RIVIERA NAYARIT</a></li>
-                        <li data-filter="7" class="filter"><a href="#inicio">VILLA LA ESTANCIA RIVIERA NAYARIT</a></li>
+                        <li data-filter="4" class="filter"><img src="images/fb_vdppv.png" alt=""><a href="#!">VILLA DEL MAR PUERTO VALLARTA</a></li>
+                        <li data-filter="5" class="filter"><img src="images/fb_vdppv.png" alt=""><a href="#!">VILLA DEL PALMAR PUERTO VALLARTA</a></li>
+                        <li data-filter="6" class="filter"><img src="images/fb_flamingos.png" alt=""><a href="#!">VILLA DEL PALMAR FLAMINGOS RIVIERA NAYARIT</a></li>
+                        <li data-filter="7" class="filter"><img src="images/fb_vlern.png" alt=""><a href="#!">VILLA LA ESTANCIA RIVIERA NAYARIT</a></li>
                     </div>
                     <div class="fb-destination">
                         <h4>Cancun</h4>
-                        <li data-filter="8" class="filter"><a href="#inicio">VILLA DEL PALMAR CANCÚN</a></li>
+                        <li data-filter="7" class="filter"><img src="images/fb_cancun.png" alt=""><a href="#inicio">VILLA DEL PALMAR CANCÚN</a></li>
                     </div>
                     <div class="fb-destination">
                         <h4>Loreto</h4>
-                        <li data-filter="9" class="filter"><a href="#inicio">VILLA DEL PALMAR AT THE ISLANDS OF LORETO</a></li>
+                        <li data-filter="8" class="filter"><img src="images/fb_loreto.png" alt=""><a href="#inicio">VILLA DEL PALMAR AT THE ISLANDS OF LORETO</a></li>
                     </div>
                 </div>
             </div>
         </aside>
 
         <section class="timeline col-sm-9 filtr-container" id="inicio">
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="1">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa del Palmar Cabo San Lucas</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h5>Tamarindo</h5>
-                                <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>y</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="2">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa del Arco Cabo San Lucas</a>
+            <?php foreach ($resorts_name as $i => $resort){
+                $json = $db->getPromos($i);
+                foreach ($json as $k => $single){
+                    $available = $db->validateDays($single['star_date'], $single['end_date'], $date );
+                    $validaPromo = $db->validatePromo($single['title']);
+                    if ($available[1] > 0 and $available[0] <= 0 and $validaPromo){ ?>
+                        <div class="thumbnail thumbnail-post filtr-item" data-category="<?= $counter ?>">
+                            <div class="post-wrapper">
+                                <div class="caption" data-toggle="modal" data-target="#promoModal">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#!" class="image-post">
+                                                <img src="images/fb.png">
+                                            </a>
+                                            <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <a class="media-heading title-post" href="#"><?= $resorts_name[$single['Resort']]; ?></a>
+                                        </div>
+                                    </div>
+                                    <p><span class="fb-title"><?= $single['title']." " ?></span><?= $single['sub_title']." ".$single['plus'] ?></p>
+                                    <div class="img-flow">
+                                        <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
+                                    </div>
+                                    <div class="hidden-info">
+                                        <span><?php $single['promocode'] ?></span>
+                                    </div>
+                                </div>
+                                <div class="links-post">
+                                    <div class="favorite">
+                                        <img data-promo="<?= $single['title'] ?>" data-resort="<?= $single['Resort'] ?>" src="images/thumbs-up.png" alt="">
+                                    </div>
+                                    <div class="btn-terms" data-toggle="modal" data-target="#termsModal">
+                                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
+                                        <div class="hidden-info">
+                                            <div>
+                                                <?= $single['terms-conditions']['processed'] ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="3">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa la Estancia Cabo San Lucas</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="4">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa del Mar Puerto Vallarta</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="5">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa del Palmar Puerto Vallarta</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="6">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa del Palmar Flamingos Riviera Nayarit</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="7">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa la Estancia Riviera Nayarit</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="8">
-                <div class="post-wrapper">
-                    <div class="favorite">
-                        <img src="images/star.png" alt="">
-                    </div>
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa Del Palmar Cancun</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-post filtr-item" data-category="9">
-                <div class="favorite">
-                    <img src="images/star.png" alt="">
-                </div>
-                <div class="post-wrapper">
-                    <div class="caption" data-toggle="modal" data-target="#promoModal">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#!" class="image-post">
-                                    <img src="images/fb.png">
-                                </a>
-                                <img class="img-profile" src="images/Donkey_Kong_Profile_Artwork.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <a class="media-heading title-post" href="#">Villa del Palmar Loreto</a>
-                            </div>
-                        </div>
-                        <p>Let's celebrate #5deMayo by going to Mexico! ☀️⛱ Get up to 50% OFF + FREE TEQUILA TASTING</p>
-                        <div class="img-flow">
-                            <a href="#!"><img src="images/promo.jpg" data-holder-rendered="true"  class="image-post-full"></a>
-                        </div>
-                        <div class="hidden-info">
-                            <span>villasaver</span>
-                        </div>
-                    </div>
-                    <div class="links-post" data-toggle="modal" data-target="#termsModal">
-                        <a class="btn btn-default" href="#!" role="button">Terms and conditions</a>
-                        <div class="hidden-info">
-                            <div>
-                                <h1>peoror</h1>
-                                <ul>
-                                    <li>1</li>
-                                    <li>3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                    <?php }
+                } $counter++;
+            } ?>
         </section>
-
     </div><!--#container-->
 </div>
 
-<div class="modal fade" id="promoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade" id="promoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-lg" role="document">
         <div class="row modal-wrapper">
             <div class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></div>
@@ -606,7 +295,7 @@ $tomorrow = date ( 'm/d/Y' , $date2 ); ?>
                     <h3>Book now!</h3>
                     <form action="" id="frm-booking">
                         <input type="hidden" class="form-control item-form" value="Villa del Palmar Puerto Vallarta" readonly>
-                        <h3>Villa del Palmar Puerto Vallarta</h3>
+                        <h5>Villa del Palmar Puerto Vallarta</h5>
                         <input type="hidden" id="promocode" value="">
                         <input type="text" name="daterange" class="form-control item-form" value="<?= $today." - ".$tomorrow ?>" readonly=""/>
                         <input type="submit" class="form-control btn-book" value="check availability">
@@ -617,7 +306,7 @@ $tomorrow = date ( 'm/d/Y' , $date2 ); ?>
     </div>
 </div>
 
-<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-backdrop=”static” data-keyboard=”false”>
     <div class="modal-dialog modal-lg" role="document">
         <div class="row modal-wrapper">
             <div class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></div>
@@ -637,13 +326,16 @@ $tomorrow = date ( 'm/d/Y' , $date2 ); ?>
 <script src="js/controls.js"></script>
 <script src="js/moment.min.js"></script>
 <script src="js/daterangepicker.js"></script>
-
+<script src="js/js.cookie.js"></script>
+<script src="js/cookies.js"></script>
 
 <!-- Kick off Filterizr -->
 <script type="text/javascript">
     $(function() {
         //Initialize filterizr with default options
-        $('.filtr-container').filterizr();
+        $('.filtr-container').filterizr('setOptions',{
+            layout: 'sameWidth'
+        });
 
         // Hiddes
         if(screen.width < 767){
@@ -669,15 +361,6 @@ $tomorrow = date ( 'm/d/Y' , $date2 ); ?>
                 $(panel).next().hide("slow");
             })
         }
-
-        $('.favorite img').on('click', function () {
-            if($(this).hasClass("fav")){
-                $(this).attr('src', "images/star.png").removeClass('fav');
-            }else{
-                $(this).attr('src', "images/star2.png").addClass('fav');
-            }
-        })
-
 
     });
 </script>

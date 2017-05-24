@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo JavaScript Cookie</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar-inner">
+        <div class="container">
+          <p class="navbar-text navbar-left nombre-plugin">JavaScript Cookie</p>
+          <p class="navbar-text navbar-left link-post"><a href="http://blog.endeos.com/gestionar-cookies-con-jquery" class="navbar-link">Volver al artículo</a></p>
+        </div>
+      </div>
+    </nav>
+    <!-- /NAV BAR -->
+
+
+    <!-- MAIN CONTENT -->
+	<div class="container">
+		<div class="row">
+			<div class="page-header">
+				<h1>Clica sobre una imagen para cambiar el color de fondo <small>y guardar una cookie</small></h1>
+			</div>
+			<div class="col-md-3 col-xs-6">
+				<a href="#" class="thumbnail" data-color="#aa0114">
+					<img alt="Fresa roja" src="img/fresa.png">
+				</a>
+			</div>
+			<div class="col-md-3 col-xs-6">
+				<a href="#" class="thumbnail" data-color="#698615">
+					<img alt="Manzana verde" src="img/manzana.png">
+				</a>
+			</div>
+			<div class="col-md-3 col-xs-6">
+				<a href="#" class="thumbnail" data-color="#f4881f">
+					<img alt="Naranja" src="img/naranja.png">
+				</a>
+			</div>
+			<div class="col-md-3 col-xs-6">
+				<a href="#" class="thumbnail" data-color="#d8be09">
+					<img alt="Limón amarillo" src="img/limon.png">
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<a class="btn btn-block btn-primary" href="#" target="_blank">Conservar cookie y abrir otra pestaña</a>
+				<a id="eliminaCookie" class="btn btn-block btn-primary" href="#" target="_blank">Eliminar cookie y abrir otra pestaña</a>
+			</div>
+		</div>
+	</div>
+    <!-- /MAIN CONTENT -->
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/js.cookie.js"></script>
+    <script src="js/functions.js"></script>
+  </body>
+</html>
